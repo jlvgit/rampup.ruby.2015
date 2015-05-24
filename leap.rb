@@ -1,7 +1,7 @@
 leap_years = []
-print "Give me a starting year. >"
+print "Give me a starting year. "
 start = gets.to_i
-print "Now give me an ending year. >"
+print "Now give me an ending year. "
 ending = gets.to_i
 years = start..ending
 array = years.to_a
@@ -15,4 +15,4 @@ leap_years.each do |stuff|
 		leap_years.delete(stuff)
 	end
 end
-puts "\nThe leap years between #{start} and #{ending} are #{leap_years}"
+puts "\nThe leap years between #{start} and #{ending} are: \n\n#{leap_years.join(" ")}\n\n"
