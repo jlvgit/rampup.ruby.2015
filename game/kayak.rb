@@ -8,7 +8,16 @@ class Kayak
 		@z = 1
 	end
 	
+	def center_x
+		@x + @width/2
+	end
+
+	def center_y
+		@y + @height/2
+	end
+
 	def update
+
 			if Gosu::button_down? Gosu::KbLeft
 				@x -= 5
 			elsif Gosu::button_down? Gosu::KbRight
@@ -16,14 +25,20 @@ class Kayak
 			elsif Gosu::button_down? Gosu::KbUp
 				@y -= 5
 			elsif Gosu::button_down? Gosu::KbDown
-				@y += 5	
+				@y += 5
 			end
-
 	end
 
 
 	def draw
   		@image.draw(@x,@y,@z,0.5,0.5)
   	end
+  	
+  	def button_down(id)
+    	if id == Gosu::KbEscape
+      		close
+    	end
+  	end
+
 end
 
