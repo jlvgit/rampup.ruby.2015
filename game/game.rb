@@ -14,6 +14,8 @@ class Game < Gosu::Window
     @music = Gosu::Song.new("./Nano.wav")
     @spawnRate = 0.01
     self.caption = "Ultimate Game of Greatest Awesomeness"
+    @music.play(true)
+    @bump = Gosu::Sample.new("./jump.wav") 
   end
 
   def update
@@ -26,7 +28,7 @@ class Game < Gosu::Window
   	@rocks.each do |rock|
 	  	rock.update
 	  	if collision? @kayak, rock
-	  		puts "Collision!"
+	  		@bump.play
 	  	end
 
 	  	if rock.y > W
