@@ -12,7 +12,6 @@ class Cards
 
 	end
 
-
 	def random
 		@drawncard = @imagenumbers[rand(0..12)]
 		@drawncardsuit = @imagesuits[rand(0..3)]
